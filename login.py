@@ -33,6 +33,8 @@ if page_value == 'Cases':
     fig = px.line(df_selectedCountry,x = 'variable',y = 'Daily_Case',)
     fig.update_layout(xaxis=dict(showgrid=False),yaxis=dict(showgrid=False))
     st.plotly_chart(fig)
+    date1=list(df_selectedCountry['variable'])
+    st.sidebar.write(f'Updated on:{date1[-1]}')
 if page_value == 'Deaths':
     death_df=pd.read_csv('https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv')
     death_pvt_df=death_df.melt(id_vars=['Province/State','Country/Region','Lat','Long'],var_name='Date',value_name='RUNNING_TOTAL')
@@ -50,7 +52,7 @@ if page_value == 'Deaths':
     fig2.update_layout(xaxis=dict(showgrid=False),yaxis=dict(showgrid=False))
     st.plotly_chart(fig2)
     date=list(df_selectedCountry2['Date'])
-    st.sidebar.write('Updated on:{date[-1]}')
- 
+    st.sidebar.write(f'Updated on:{date[-1]}')
+   
 
     
