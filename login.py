@@ -47,7 +47,4 @@ if page_value == 'Deaths':
         st.header('Total Death')
     with col2:
         st.subheader(now[-1])
-    fig = px.line(df_selectedCountry2,x = 'variable',y = 'Daily_Case',)
-    fig.update_layout(xaxis=dict(showgrid=False),yaxis=dict(showgrid=False))
-    st.plotly_chart(fig)
     
