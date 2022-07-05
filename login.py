@@ -21,7 +21,7 @@ if page_value == 'Cases':
     new_df['Daily_Case'] = new_df['Daily_Case'].fillna(0).astype(int)
     df_selectedCountry = new_df[new_df['Country/Region'] == selectedCountry]
     st.header('Total Cases                   Active Cases')   
-    st.table(df_selectedCountry.tail(5)
+    st.table(df_selectedCountry).tail(5)
     today_case=list(df_selectedCountry['Daily_Case'])
     fig = px.line(df_selectedCountry,x = 'variable',y = 'Daily_Case',)
     st.plotly_chart(fig)
