@@ -35,6 +35,7 @@ if page_value == 'Cases':
     st.plotly_chart(fig)
     date1=list(df_selectedCountry['variable'])
     st.sidebar.write(f'Updated on:{date1[-1]}')
+    st.sidebar.button('link')
 if page_value == 'Deaths':
     death_df=pd.read_csv('https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv')
     death_pvt_df=death_df.melt(id_vars=['Province/State','Country/Region','Lat','Long'],var_name='Date',value_name='RUNNING_TOTAL')
@@ -53,6 +54,8 @@ if page_value == 'Deaths':
     st.plotly_chart(fig2)
     date=list(df_selectedCountry2['Date'])
     st.sidebar.write(f'Updated on:{date[-1]}')
+    if st.sidebar.button('link'):
+         webbrowser.open_new_tab('https://github.com/mukeshinchan/covid/blob/a07a8c231da5291fe44854d28289e0b761d2aa92/login.py')
    
 
     
