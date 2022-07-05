@@ -40,14 +40,14 @@ if page_value == 'Deaths':
     selectedCountry2 = st.sidebar.selectbox('Select Country', country_list)
     death_pvt_df['Daily_Case'] = death_pvt_df[death_pvt_df['Country/Region'] == selectedCountry2]['RUNNING_TOTAL'].apply(lambda x: int(dailyCaseClac(x)))
     death_pvt_df['Daily_Case'] = death_pvt_df['Daily_Case'].fillna(0).astype(int)
-    df_selectedCountry = death_pvt_df[death_pvt_df['Country/Region'] == selectedCountry2]
-    now=(list(df_selectedCountry['RUNNING_TOTAL']))
+    df_selectedCountry2 = death_pvt_df[death_pvt_df['Country/Region'] == selectedCountry2]
+    now=(list(df_selectedCountry2['RUNNING_TOTAL']))
     col1,col2= st.columns(2)
     with col1:
         st.header('Total Death')
     with col2:
         st.subheader(now[-1])
-    fig = px.line(df_selectedCountry,x = 'variable',y = 'Daily_Case',)
+    fig = px.line(df_selectedCountry2,x = 'variable',y = 'Daily_Case',)
     fig.update_layout(xaxis=dict(showgrid=False),yaxis=dict(showgrid=False))
     st.plotly_chart(fig)
     
