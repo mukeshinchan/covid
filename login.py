@@ -40,7 +40,7 @@ if page_value == 'Deaths':
     selectedCountry2 = st.sidebar.selectbox('Select Country', country_list)
     death_pvt_df['Daily_Case'] = death_pvt_df[death_pvt_df['Country/Region'] == selectedCountry2]['RUNNING_TOTAL'].apply(lambda x: int(dailyCaseClac(x)))
     death_pvt_df['Daily_Case'] = death_pvt_df['Daily_Case'].fillna(0).astype(int)
-    df_selectedCountry = new_df[death_pvt_df['Country/Region'] == selectedCountry2]
+    df_selectedCountry = death_pvt_df[death_pvt_df['Country/Region'] == selectedCountry2]
     now=(list(df_selectedCountry['RUNNING_TOTAL']))
     col1,col2= st.columns(2)
     with col1:
