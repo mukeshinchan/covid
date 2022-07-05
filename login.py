@@ -28,7 +28,7 @@ if page_value == 'Cases':
         st.subheader(total[-1])
     with col2:
         st.header('Active Cases') 
-        st.subheader(new[-1])
+        st.subheader(now[-1])
     fig = px.line(df_selectedCountry,x = 'variable',y = 'Daily_Case',)
     st.plotly_chart(fig)
 if page_value == 'Deaths':
