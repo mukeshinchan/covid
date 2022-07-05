@@ -20,7 +20,7 @@ if page_value == 'Cases':
     new_df['Daily_Case'] = new_df[new_df['Country/Region'] == selectedCountry]['value'].apply(lambda x: int(dailyCaseClac(x)))
     new_df['Daily_Case'] = new_df['Daily_Case'].fillna(0).astype(int)
     df_selectedCountry = new_df[new_df['Country/Region'] == selectedCountry]
-    total=df_selectedCountry['value'].tail(0)
+    total=df_selectedCountry['value'].tail(2)
     st.header('Total Cases                   Active Cases')   
     st.subheader(total)
     today_case=list(df_selectedCountry['Daily_Case'])
