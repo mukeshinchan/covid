@@ -45,6 +45,8 @@ if page_value == 'Deaths':
     col1,col2= st.columns(2)
     with col1:
         st.header('Total Death')
-    with col2:
         st.subheader(now[-1])
+    fig2=px.line(df_selectedCountry2,x='RUNNING_TOTAL',y='Date')
+    st.plotly_chart(fig)
+    
     
