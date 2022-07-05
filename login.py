@@ -21,7 +21,7 @@ if page_value == 'Cases':
     new_df['Daily_Case'] = new_df['Daily_Case'].fillna(0).astype(int)
     df_selectedCountry = new_df[new_df['Country/Region'] == selectedCountry]
     total=list(df_selectedCountry['value'])
-    now=(df_selectedCountry['Daily_Case'])
+    now=(list(df_selectedCountry['Daily_Case']))
     col1,col2= st.columns(2)
     with col1:
         st.header('Total Cases')
