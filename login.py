@@ -21,7 +21,7 @@ if page_value == 'Cases':
     new_df['Daily_Case'] = new_df['Daily_Case'].fillna(0).astype(int)
     df_selectedCountry = new_df[new_df['Country/Region'] == selectedCountry]
     total=list(df_selectedCountry['value'])
-    st.header('Total Cases                   Active Cases')   
+    st.header(f'Total Cases{'           '}Active Cases')   
     st.subheader(total[-1])
     today_case=list(df_selectedCountry['Daily_Case'])
     fig = px.line(df_selectedCountry,x = 'variable',y = 'Daily_Case',)
