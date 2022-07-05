@@ -15,17 +15,13 @@ def dailyCaseClac(x):
     return int(currentVal)
 page_value  = st.sidebar.radio('Select Page', ['Demo','Cases','Deaths'])
 if page_value=='Demo':
-    st.image('https://www.usda.gov/sites/default/files/covid-header-2.png')
     st.title("COVID-19 ANALYSE")
     st.write('A COVIDSafe Plan is a list of health and safety actions. It is an important part of the occupational health and safety obligations of every workplace and is required under the Victorian Government’s pandemic orders.Every Victorian business or organisation with on-site operations must keep a COVIDSafe Plan at each workplace. They must provide it to an Authorised Officer upon request and comply with any direction given by an authorised officer or WorkSafe inspector to modify the COVIDSafe plan. The plan must set out how the workplace will keep workers, customers and other attendees safe from COVID-19. It also helps to prepare for a case of COVID-19 in the workplace.All workplaces should regularly review and update their COVIDSafe Plan to ensure it reflects the current COVIDSafe settings. A COVIDSafe Plan template has been developed to assist workplaces. However, it is not mandatory to use this template.')
 if page_value == 'Cases':
     st.header('Covid Cases')
-    st.image('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsvyCaSItjzfs38GnlEjEiuNgEW0bNQOi3KA&usqp=CAU',width=500)
     country_list = list(new_df['Country/Region'].unique())
     selectedCountry  = st.sidebar.selectbox('Select Country', country_list)
-
     new_df['Daily_Case'] = new_df[new_df['Country/Region'] == selectedCountry]['value'].apply(lambda x: int(dailyCaseClac(x)))
-
     new_df['Daily_Case'] = new_df['Daily_Case'].fillna(0).astype(int)
     df_selectedCountry = new_df[new_df['Country/Region'] == selectedCountry]
     fig = px.line(df_selectedCountry,x = 'variable',y = 'Daily_Case',)
