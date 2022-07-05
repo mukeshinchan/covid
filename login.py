@@ -14,7 +14,6 @@ def dailyCaseClac(x):
     temp_val = x
     return int(currentVal)
 page_value  = st.sidebar.radio('Select Page', ['Demo','Cases','Deaths'])
-  print(page_value)
 if page_value=='Demo':
     st.image('https://www.usda.gov/sites/default/files/covid-header-2.png')
     st.title("COVID-19 ANALYSE")
