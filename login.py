@@ -50,7 +50,7 @@ if page_value == 'Deaths':
     fig2.update_layout(xaxis=dict(showgrid=False),yaxis=dict(showgrid=False))
     st.plotly_chart(fig2)
     date=list(df_selectedCountry2['Date'])
-    st.sidebar.wirte(f'Updated on:{date[-1]}')
+    st.sidebar.wirte('Updated on:')
  
 
     
