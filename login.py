@@ -38,9 +38,9 @@ if page_value == 'Deaths':
     death_pvt_df=death_df.melt(id_vars=['Province/State','Country/Region','Lat','Long'],var_name='Date',value_name='RUNNING_TOTAL')
     country_list = list(new_df['Country/Region'].unique())
     selectedCountry2 = st.sidebar.selectbox('Select Country', country_list)
-    death_pvt_df['Daily_Case'] = death_pvt_df[death_pvt_df['Country/Region'] == selectedCountry]['value'].apply(lambda x: int(dailyCaseClac(x)))
+    death_pvt_df['Daily_Case'] = death_pvt_df[death_pvt_df['Country/Region'] == selectedCountry2]['value'].apply(lambda x: int(dailyCaseClac(x)))
     death_pvt_df['Daily_Case'] = death_pvt_df['Daily_Case'].fillna(0).astype(int)
-    df_selectedCountry = new_df[death_pvt_df['Country/Region'] == selectedCountry]
+    df_selectedCountry = new_df[death_pvt_df['Country/Region'] == selectedCountry2]
     now=(list(df_selectedCountry['RUNNING_TOTAL']))
     col1,col2= st.columns(2)
     with col1:
