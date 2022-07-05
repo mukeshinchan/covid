@@ -54,8 +54,9 @@ if page_value == 'Deaths':
     st.plotly_chart(fig2)
     date=list(df_selectedCountry2['Date'])
     st.sidebar.write(f'Updated on:{date[-1]}')
-    if st.sidebar.button('link'):
-         webbrowser.open_new_tab('https://github.com/mukeshinchan/covid/blob/a07a8c231da5291fe44854d28289e0b761d2aa92/login.py')
-   
+    #if st.sidebar.button('link'):
+         #webbrowser.open_new_tab('https://github.com/mukeshinchan/covid/blob/a07a8c231da5291fe44854d28289e0b761d2aa92/login.py')
+    st.write("check out this [link](https://github.com/mukeshinchan/covid/blob/a07a8c231da5291fe44854d28289e0b761d2aa92/login.py)")
+
 
     
