@@ -56,7 +56,7 @@ if page_value == 'Deaths':
     st.sidebar.write(f'Updated on:{date[-1]}')
     #if st.sidebar.button('link'):
          #webbrowser.open_new_tab('https://github.com/mukeshinchan/covid/blob/a07a8c231da5291fe44854d28289e0b761d2aa92/login.py')
-    st.write("check out this [link](https://github.com/mukeshinchan/covid/blob/a07a8c231da5291fe44854d28289e0b761d2aa92/login.py)")
+    st.sidebar.write("check out this [link](https://github.com/mukeshinchan/covid/blob/a07a8c231da5291fe44854d28289e0b761d2aa92/login.py)")
 
 
     
